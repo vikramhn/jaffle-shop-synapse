@@ -168,6 +168,8 @@ metrics:
 
 saved_queries:
   - name: order_metrics
+    config:
+      enabled: false
     query_params:
       metrics:
         - orders

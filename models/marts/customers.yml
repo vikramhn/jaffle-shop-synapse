@@ -94,6 +94,8 @@ metrics:
 
 saved_queries:
   - name: customer_order_metrics
+    config:
+      enabled: false
     query_params:
       metrics:
         - count_lifetime_orders

@@ -43,6 +43,25 @@ Ready to go? Grab some water and a nice snack, and let's dig in!
 - A data warehouse (BigQuery, Snowflake, Redshift, Databricks, or Postgres) with adequate permissions to create a fresh database for this project and run dbt in it
 - _Optional_ Python 3.9 or higher (for generating synthetic data with `jafgen`)
 
+### Azure Synapse Dedicated SQL Pool
+
+The `synapse-legacy` branch is configured and verified for Azure Synapse **Dedicated** SQL Pool with dbt Core 1.8 and `dbt-synapse` 1.8.5. It is not for Synapse serverless SQL.
+
+Install dependencies and load the sample data:
+
+```bash
+dbt deps
+dbt seed --full-refresh --vars '{"load_source_data": true}'
+```
+
+Run the compatible build command locally or in the dbt Cloud job:
+
+```bash
+dbt build --exclude resource_type:unit_test
+```
+
+The project’s three saved queries are disabled because this adapter version does not support them. The ordinary models and data tests are supported.
+
 ## 📓 Create new repo from template
 
 1. <details>
