@@ -1,0 +1,27 @@
+models:
+  - name: location_profitability_v1
+    description: Location-level profitability summary with one row per location.
+    columns:
+      - name: location_id
+        description: The unique key of the location profitability mart.
+        data_tests:
+          - not_null
+          - unique
+      - name: location_name
+        description: The name of the location.
+      - name: opened_date
+        description: The date the location opened.
+      - name: tax_rate
+        description: The tax rate for the location.
+      - name: total_orders
+        description: Total number of orders placed at the location.
+      - name: total_revenue
+        description: Total order revenue, including tax, for the location.
+      - name: total_cost
+        description: Total supply cost to fulfill orders for the location.
+      - name: average_order_value
+        description: Average order total for the location.
+      - name: gross_profit
+        description: Gross-profit proxy based on order_total minus order_cost.
+      - name: profit_margin_pct
+        description: Gross-profit proxy as a percentage of total revenue.
