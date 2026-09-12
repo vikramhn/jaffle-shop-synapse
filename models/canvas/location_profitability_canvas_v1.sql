@@ -39,7 +39,7 @@ WITH locations AS (
     location_name,
     tax_rate,
     opened_date,
-    COUNT_BIG(order_id) AS total_orders,
+    COUNT(order_id) AS total_orders,
     SUM(order_total) AS total_revenue,
     SUM(order_cost) AS total_cost,
     AVG(order_total) AS average_order_value
